@@ -1,10 +1,10 @@
 /**
- * 48Ã‚£∫
+ * 48Ã‚
  * You are given an n x n 2D matrix representing an image.
-    Rotate the image by 90 degrees (clockwise).
+  Rotate the image by 90 degrees (clockwise).
  * Created by zhaoshiqiang on 2016/12/29.
  */
-public class Rotata_image {
+public class Rotate_image {
     public static void rotate(int[][] matrix) {
         int n = matrix.length;
         if (n <= 1){
