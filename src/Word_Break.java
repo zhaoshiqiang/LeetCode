@@ -25,14 +25,16 @@ public class Word_Break {
             for (String word : wordDict){
                 int wordlength = word.length();
                 int end = i+wordlength;
+                //总长大于s的长度
                 if (end > length){
                     continue;
                 }
+                //end位置已经在之前循环中证实可拆分成词，则跳过
                 if (dp[end]){
                     continue;
                 }
                 if (s.substring(i,end).equals(word)){
-                    dp[end]=true;
+                    dp[end]=true;   //标记可拆分成词
                 }
             }
 //            for (int j=0; j<=i; j++){
