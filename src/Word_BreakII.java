@@ -16,7 +16,7 @@ import java.util.Set;
  A solution is ["cats and dog", "cat sand dog"]
  * Created by zhaoshiqiang on 2016/12/29.
  */
-//算法：动态规划-区间
+//算法：动态规划-区间+深度优先遍历
 public class Word_BreakII {
     public static List<String> wordBreak(String s, Set<String> wordDict) {
         int length = s.length();
