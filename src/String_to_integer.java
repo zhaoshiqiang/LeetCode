@@ -1,7 +1,4 @@
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-/**µÚ8Ìâ£ºImplement atoi to convert a string to an integer.
+/**ç¬¬8é¢˜ï¼šImplement atoi to convert a string to an integer.
  * Created by zhaoshiqiang on 2016/12/30.
  */
 public class String_to_integer {
@@ -26,10 +23,10 @@ public class String_to_integer {
         }
         for ( ; i<length; i++){
             char a = str.charAt(i);
-            //×¢ÒâÕâÀïÓĞ=
+            //æ³¨æ„è¿™é‡Œæœ‰=
             if (a >= '0' && a <= '9'){
                 result = result*10+a-'0';
-                //Èç¹û³¬³öÕûÊı·¶Î§ÔòÖ±½ÓÊä³öÆä½çÏŞÖµ
+                //å¦‚æœè¶…å‡ºæ•´æ•°èŒƒå›´åˆ™ç›´æ¥è¾“å‡ºå…¶ç•Œé™å€¼
                 if (flag){
                     if (result >= -min){
                         return (int)min;
@@ -54,7 +51,7 @@ public class String_to_integer {
     }
 
     public static void main(String[] args){
-//        long startTime = System.currentTimeMillis();//»ñÈ¡µ±Ç°Ê±¼ä
+//        long startTime = System.currentTimeMillis();//è·å–å½“å‰æ—¶é—´
             System.out.println(myAtoi("2147483648"));
             System.out.println(myAtoi("-2147483648"));
             System.out.println(myAtoi("+-1"));
@@ -63,6 +60,6 @@ public class String_to_integer {
             System.out.println(myAtoi("1"));
             System.out.println(myAtoi("    0101"));
 //        long endTime = System.currentTimeMillis();
-//        System.out.println("³ÌĞòÔËĞĞÊ±¼ä£º" + (endTime - startTime) + "ms");
+//        System.out.println("ç¨‹åºè¿è¡Œæ—¶é—´ï¼š" + (endTime - startTime) + "ms");
     }
 }
