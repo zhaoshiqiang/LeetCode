@@ -1,14 +1,14 @@
 import java.util.Stack;
 
 /**
- * 151题：Given an input string, reverse the string word by word.
+ * 151棰橈細Given an input string, reverse the string word by word.
 
      For example,
      Given s = "the sky is blue",
      return "blue is sky the".
  * Created by zhaoshiqiang on 2016/12/28.
  */
-//数据结构：栈
+//鏁版嵁缁撴瀯锛氭爤
 public class Reverse_words_in_a_string {
     public static String reverseWords(String s) {
         if (s == null){
@@ -28,16 +28,6 @@ public class Reverse_words_in_a_string {
         return reversewords.toString();
     }
 
-    public static String reverseWordsII(String s){
-        Stack<String> word = new Stack<>();
-        StringBuffer reversewords = new StringBuffer();
-        int wordstart=0;
-        int wordend=0;
-        while (wordend<s.length()){
-
-        }
-        return reversewords.toString();
-    }
 
     public static void main(String[] args){
         System.out.println(reverseWords(" 1"));
