@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 140Ìâ£º
+ * 140é¢˜ï¼š
  * Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where each word is a valid dictionary word.
 
  Return all such possible sentences.
@@ -16,7 +16,7 @@ import java.util.Set;
  A solution is ["cats and dog", "cat sand dog"]
  * Created by zhaoshiqiang on 2016/12/29.
  */
-//Ëã·¨£º¶¯Ì¬¹æ»®-Çø¼ä+Éî¶ÈÓÅÏÈ±éÀú
+//ç®—æ³•ï¼šåŠ¨æ€è§„åˆ’-åŒºé—´+æ·±åº¦ä¼˜å…ˆéå†
 public class Word_BreakII {
     public static List<String> wordBreak(String s, Set<String> wordDict) {
         int length = s.length();
@@ -24,7 +24,7 @@ public class Word_BreakII {
         for (int i=0; i<dp.length; i++){
             dp[i] = new node();
         }
-        dp[0].sign=true; //³õÊ¼»¯£¬s=""Ê±Îªtrue
+        dp[0].sign=true; //åˆå§‹åŒ–ï¼Œs=""æ—¶ä¸ºtrue
         for (int i=0; i<=length ;i++){
             if (dp[i].sign == false){
                 continue;
@@ -41,7 +41,7 @@ public class Word_BreakII {
                 }
             }
 //            for (int j=0; j<=i; j++){
-//                //×´Ì¬×ªÒÆ
+//                //çŠ¶æ€è½¬ç§»
 //                if (dp[j] && wordDict.contains(s.substring(j,i))){
 //                    dp[i]=true;
 //                    break;
@@ -49,7 +49,7 @@ public class Word_BreakII {
 //            }
         }
         if (dp[length].sign == true){
-            //¿É²ğ·Ö
+            //å¯æ‹†åˆ†
             List<String> results = new ArrayList<>();
             List<Integer> indexes = dp[0].list;
             for (Integer index: indexes){
@@ -57,7 +57,7 @@ public class Word_BreakII {
             }
             return results;
         }else {
-            //²»¿É²ğ·Ö
+            //ä¸å¯æ‹†åˆ†
             return new ArrayList<String>();
         }
     }
@@ -80,13 +80,13 @@ public class Word_BreakII {
         dict.add("and");
         dict.add("sand");
         dict.add("dog");
-//        long startTime = System.currentTimeMillis();//»ñÈ¡µ±Ç°Ê±¼ä
+//        long startTime = System.currentTimeMillis();//è·å–å½“å‰æ—¶é—´
         List<String> strings = wordBreak("catsanddog", dict);
         for (String s :strings){
             System.out.println(s);
         }
 //        long endTime = System.currentTimeMillis();
-//        System.out.println("³ÌĞòÔËĞĞÊ±¼ä£º" + (endTime - startTime) + "ms");
+//        System.out.println("ç¨‹åºè¿è¡Œæ—¶é—´ï¼š" + (endTime - startTime) + "ms");
     }
 
     static class node{
