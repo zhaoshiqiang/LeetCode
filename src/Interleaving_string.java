@@ -1,5 +1,5 @@
 /**
- * 97Ìâ£ºGiven s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
+ * 97é¢˜ï¼šGiven s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
 
  For example,
  Given:
@@ -10,7 +10,7 @@
  When s3 = "aadbbbaccc", return false.
  * Created by zhaoshiqiang on 2016/12/29.
  */
-//Ëã·¨£º¶¯Ì¬¹æ»®
+//ç®—æ³•ï¼šçº¿æ€§åŠ¨æ€è§„åˆ’ï¼Œç±»ä¼¼äºæœ€é•¿å…¬å…±å­åºåˆ—
 public class Interleaving_string {
     public static boolean isInterleave(String s1, String s2, String s3) {
         int length3=s3.length();
@@ -20,14 +20,14 @@ public class Interleaving_string {
             return false;
         }
         boolean[][] dp = new boolean[length1+1][length2+1];
-        //ÕâÀï±íÊ¾È¡Ò»¸ö´®ÖĞ¶àÉÙ¸ö×Ö·û£¬0,1...length
+        //è¿™é‡Œè¡¨ç¤ºå–ä¸€ä¸ªä¸²ä¸­å¤šå°‘ä¸ªå­—ç¬¦ï¼Œ0,1...length
         for (int i=0; i<=length1; i++){
             for (int j=0; j<=length2; j++){
                 if (i==0 && j==0){
                     dp[i][j] = true;
                     continue;
                 }
-                //ÉùÃ÷ÕâÈı¸ö±äÁ¿ÊÇÎªÁË¸ü¿ì
+                //å£°æ˜è¿™ä¸‰ä¸ªå˜é‡æ˜¯ä¸ºäº†æ›´å¿«
                 char x=0;
                 char y=0;
                 char z=0;
@@ -40,6 +40,12 @@ public class Interleaving_string {
                 if (i+j>0){
                     z=s3.charAt(i+j-1);
                 }
+                /*
+                å¦‚æœS1[i]=S2[j]=S3[z]ï¼Œåˆ™dp[i][j] = dp[i-1][j] | dp[i][j-1];
+                å¦‚æœS1[i]=S3[z]ï¼Œåˆ™dp[i][j] = dp[i-1][j];
+                å¦‚æœS2[j]=S3[z]ï¼Œåˆ™dp[i][j]= dp[i][j-1];
+                å…¶ä»–åˆ™ä¸ºfalse
+                */
                 if (i>0 && j>0 && x == y && y == z){
                     dp[i][j] = dp[i-1][j] | dp[i][j-1];
                 }else if (i>0 && x == z){
