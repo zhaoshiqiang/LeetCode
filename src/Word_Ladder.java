@@ -1,18 +1,18 @@
 import java.util.*;
 
-/**µÚ127Ìâ
+/**ç¬¬127é¢˜
  * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
 
  Only one letter can be changed at a time
  Each intermediate word must exist in the word list
  * Created by zhaoshiqiang on 2017/1/11.
  */
-//Ëã·¨ BFS£¬Êı¾İ½á¹¹£º¹şÏ£±í
+//ç®—æ³• BFSï¼Œæ•°æ®ç»“æ„ï¼šå“ˆå¸Œè¡¨
 public class Word_Ladder {
     private String start;
     private String end;
     private Set<String> dict;
-    //¼ÇÂ¼Ã¿¸öµ¥´ÊËùÔÚµÄ²ãÊı
+    //è®°å½•æ¯ä¸ªå•è¯æ‰€åœ¨çš„å±‚æ•°
     HashMap<String,Integer> wordlayer = new HashMap<String,Integer>();
 
     public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
@@ -70,9 +70,9 @@ public class Word_Ladder {
         dict.add("dog");
         dict.add("lot");
         dict.add("log");
-//        long startTime = System.currentTimeMillis();//»ñÈ¡µ±Ç°Ê±¼ä
+//        long startTime = System.currentTimeMillis();//è·å–å½“å‰æ—¶é—´
         System.out.println(word_ladder.ladderLength("hit", "cog", dict));
 //        long endTime = System.currentTimeMillis();
-//        System.out.println("³ÌĞòÔËĞĞÊ±¼ä£º" + (endTime - startTime) + "ms");
+//        System.out.println("ç¨‹åºè¿è¡Œæ—¶é—´ï¼š" + (endTime - startTime) + "ms");
     }
 }
