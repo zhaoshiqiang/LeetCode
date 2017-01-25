@@ -1,11 +1,11 @@
-/**µÚ96Ìâ
+/**ç¬¬96é¢˜
  * Given n, how many structurally unique BST's (binary search trees) that store values 1...n?
 
  For example,
  Given n = 3, there are a total of 5 unique BST's.
  * Created by zhaoshiqiang on 2017/1/3.
  */
-//Çø¼ä¶¯Ì¬¹æ»®
+//åŒºé—´åŠ¨æ€è§„åˆ’
 public class Unique_Binary_Search_Trees {
     public static int numTrees(int n) {
         if (n==0){
@@ -18,9 +18,9 @@ public class Unique_Binary_Search_Trees {
         results[1]=1;
         results[0]=1;
         /**
-         * ¼ÙÉè f(i) ±íÊ¾ÒÑÉıĞòÅÅĞòµÄÊı×é [0,i] Ëù´æÔÚµÄ²»Í¬BSTµÄ¼¯ºÏ£¬
-         * Ôòf(i)¿ÉÒÔ¿´³ö½«0~i-1²ğ·Ö³ÉÁ½¶Î£¬Ç°¶Î×÷ÎªiµÄ¸¸½Úµã£¬ºó¶Ë×÷ÎªiµÄ×ó½Úµã£¬½«Ç°¶ÎÖÖÀà*ºó¶ËÖÖÀàÔòÎªÕâ´Î·Ö¶ÎµÄ×ÜÊı
-         * ½«ÕâĞ©×ÜÊıÇóºÍ£¬ÔòÎªf(i)
+         * å‡è®¾ f(i) è¡¨ç¤ºå·²å‡åºæ’åºçš„æ•°ç»„ [0,i] æ‰€å­˜åœ¨çš„ä¸åŒBSTçš„é›†åˆï¼Œ
+         * åˆ™f(i)å¯ä»¥çœ‹å‡ºå°†0~i-1æ‹†åˆ†æˆä¸¤æ®µï¼Œå‰æ®µä½œä¸ºiçš„çˆ¶èŠ‚ç‚¹ï¼Œåç«¯ä½œä¸ºiçš„å·¦èŠ‚ç‚¹ï¼Œå°†å‰æ®µç§ç±»*åç«¯ç§ç±»åˆ™ä¸ºè¿™æ¬¡åˆ†æ®µçš„æ€»æ•°
+         * å°†è¿™äº›æ€»æ•°æ±‚å’Œï¼Œåˆ™ä¸ºf(i)
          * */
         for (int i=2; i<=n; i++){
             for (int j=0; j<i; j++){
