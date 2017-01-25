@@ -8,6 +8,7 @@
  Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
  * Created by zhaoshiqiang on 2017/1/13.
  */
+//数组 也可以用hash表
 public class Remove_Duplicates_from_Sorted_ArrayII {
     public static int removeDuplicates(int[] nums) {
         int length = nums.length;
