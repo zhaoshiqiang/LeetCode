@@ -1,6 +1,6 @@
 import com.sun.org.apache.bcel.internal.generic.IINC;
 
-/** µÚ31Ìâ
+/** ç¬¬31é¢˜
  * Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
 
  If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
@@ -8,9 +8,9 @@ import com.sun.org.apache.bcel.internal.generic.IINC;
  The replacement must be in-place, do not allocate extra memory.
 
  Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
- 1,2,3 ¡ú 1,3,2
- 3,2,1 ¡ú 1,2,3
- 1,1,5 ¡ú 1,5,1
+ 1,2,3 â†’ 1,3,2
+ 3,2,1 â†’ 1,2,3
+ 1,1,5 â†’ 1,5,1
  * Created by zhaoshiqiang on 2016/12/31.
  */
 public class Next_permutation {
@@ -22,13 +22,13 @@ public class Next_permutation {
         }
         int index = length-1;
         while (index >0){
-            //±£Ö¤indexºóÃæµÄÊı×Ö¶¼ÊÇ´Ó´óµ½Ğ¡ÅÅÁĞ
+            //ä¿è¯indexåé¢çš„æ•°å­—éƒ½æ˜¯ä»å¤§åˆ°å°æ’åˆ—
             if (nums[index] > nums[index-1]){
                 break;
             }
             index--;
         }
-        //Èç¹ûnumsÒÑ¾­´Ó´óµ½Ğ¡ÅÅºÃ£¬Ö±½Ó´ÓĞ¡µ½´óÅÅÁĞ¼´¿É
+        //å¦‚æœnumså·²ç»ä»å¤§åˆ°å°æ’å¥½ï¼Œç›´æ¥ä»å°åˆ°å¤§æ’åˆ—å³å¯
         if (index == 0){
             int stop = length/2;
             for (int i=0; i<stop; i++){
@@ -38,21 +38,21 @@ public class Next_permutation {
                 nums[j] = temp;
             }
         }else {
-            //ÕâÀïindex±ê¼ÇÎª8µÄÏÂ±ê£¬Òª¼ÇÂ¼4£¬¹ÊÒª¼õ1
+            //è¿™é‡Œindexæ ‡è®°ä¸º8çš„ä¸‹æ ‡ï¼Œè¦è®°å½•4ï¼Œæ•…è¦å‡1
             index--;
             int second = -1;
-            //ÕÒµ½±È4´óµ«ÔÚÕâĞ©´óÊıÀïÃæ×îĞ¡µÄÖµ£¬È»ºó½«ÆäÁ½Õßµ÷»»
+            //æ‰¾åˆ°æ¯”4å¤§ä½†åœ¨è¿™äº›å¤§æ•°é‡Œé¢æœ€å°çš„å€¼ï¼Œç„¶åå°†å…¶ä¸¤è€…è°ƒæ¢
             for (int i=length-1; i>index;i--){
                 if (nums[i] > nums[index]){
                     second = i;
                     break;
                 }
             }
-            //µ÷»»
+            //è°ƒæ¢
             int t = nums[index];
             nums[index] = nums[second];
             nums[second] = t;
-            //½«4ºóÃæµÄÊı×Ö´ÓĞ¡µ½´óÅÅÁĞ
+            //å°†4åé¢çš„æ•°å­—ä»å°åˆ°å¤§æ’åˆ—
             int stop = (index+length)/2-index;
             for (int i=1;i<= stop;i++){
                 int j = length-i;
@@ -65,7 +65,7 @@ public class Next_permutation {
     }
 
     public static void main(String[] args){
-        int[] a =new int[]{1,3,2};
+        int[] a =new int[]{6,5,4,8,7,5,1};
         nextPermutation(a);
         for (int i=0; i<a.length;i++){
             System.out.print(a[i]+ "   ");
