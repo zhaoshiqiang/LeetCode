@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**µÚ95Ìâ
+/**ç¬¬95é¢˜
  * Given an integer n, generate all structurally unique BST's (binary search trees) that store values 1...n.
  For example,
  Given n = 3, your program should return all 5 unique BST's shown below.
  * Created by zhaoshiqiang on 2017/1/3.
  */
-//µİ¹é£¬ÓÉÓÚÒª°ÑËùÓĞµÄÊ÷¶¼¼ÇÂ¼ÏÂÀ´£¬Ã¿´Î¶¼²»ÊÇÎ¨Ò»µÄ£¬ËùÒÔÕâÀïÃ»ÓĞÖØµş×ÓÎÊÌâ£¬¹ÊÓÃµİ¹é
+//é€’å½’ï¼Œç”±äºè¦æŠŠæ‰€æœ‰çš„æ ‘éƒ½è®°å½•ä¸‹æ¥ï¼Œæ¯æ¬¡éƒ½ä¸æ˜¯å”¯ä¸€çš„ï¼Œæ‰€ä»¥è¿™é‡Œæ²¡æœ‰é‡å å­é—®é¢˜ï¼Œæ•…ç”¨é€’å½’
 public class Unique_Binary_Search_TreesII {
     public static List<TreeNode> generateTrees(int n) {
         if (n==0){
@@ -19,16 +19,16 @@ public class Unique_Binary_Search_TreesII {
     public static List<TreeNode> createTrees(int m, int n){
         List<TreeNode>result = new ArrayList<TreeNode>();
         if (m>n){
-            //ÊıµÄ×óÓÒº¢×Ó¿ÉÄÜÎªnull£¬¹ÊÕâÀïÒªÌí¼ÓÒ»¸önull
+            //æ•°çš„å·¦å³å­©å­å¯èƒ½ä¸ºnullï¼Œæ•…è¿™é‡Œè¦æ·»åŠ ä¸€ä¸ªnull
             result.add(null);
             return result;
         }
         for (int i=m; i<=n; i++){
-            //µÃµ½(m, i - 1)ÖĞËùÓĞÄÜ¹¹³ÉµÄ×ÓÊ÷
+            //å¾—åˆ°(m, i - 1)ä¸­æ‰€æœ‰èƒ½æ„æˆçš„å­æ ‘
             List<TreeNode> ls = createTrees(m, i - 1);
-            //µÃµ½(i + 1, n)ÖĞËùÓĞÄÜ¹¹³ÉµÄ×ÓÊ÷
+            //å¾—åˆ°(i + 1, n)ä¸­æ‰€æœ‰èƒ½æ„æˆçš„å­æ ‘
             List<TreeNode> rs = createTrees(i + 1, n);
-            //È»ºóÒÔiÎª¸ù£¬lsÖĞ¸÷ÏîÎª×ó×ÓÊ÷£¬rsÖĞ¸÷ÏîÎªÓÒ×ÓÊ÷£¬¹¹½¨Ê÷£¬²¢½«ÆäÌîÈëÁĞ±í
+            //ç„¶åä»¥iä¸ºæ ¹ï¼Œlsä¸­å„é¡¹ä¸ºå·¦å­æ ‘ï¼Œrsä¸­å„é¡¹ä¸ºå³å­æ ‘ï¼Œæ„å»ºæ ‘ï¼Œå¹¶å°†å…¶å¡«å…¥åˆ—è¡¨
             for (TreeNode l : ls){
                 for (TreeNode r : rs){
                     TreeNode curr = new TreeNode(i);
