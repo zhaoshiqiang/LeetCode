@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 133Ìâ£ºClone an undirected graph. Each node in the graph contains a label and a list of its neighbors.
+ * 133é¢˜ï¼šClone an undirected graph. Each node in the graph contains a label and a list of its neighbors.
 
 
      OJ's undirected graph serialization:
@@ -28,7 +28,7 @@ import java.util.Map;
            \_/
  * Created by zhaoshiqiang on 2016/12/28.
  */
-//Ëã·¨£ºDFS or BFS£¬Êı¾İ½á¹¹£º¹şÏ£±í
+//ç®—æ³•ï¼šDFS or BFSï¼Œæ•°æ®ç»“æ„ï¼šå“ˆå¸Œè¡¨
 public class Clone_Graph {
     private Map<Integer,UndirectedGraphNode> nodemap = new HashMap<Integer, UndirectedGraphNode>();
 
@@ -36,7 +36,7 @@ public class Clone_Graph {
         if (node == null){
             return null;
         }
-        //Èç¹ûÒÑ¾­ÔÚmapÖĞ£¬ÔòÖ±½Ó·µ»Ø
+        //å¦‚æœå·²ç»åœ¨mapä¸­ï¼Œåˆ™ç›´æ¥è¿”å›
         if (nodemap.containsKey(node.label)){
             return nodemap.get(node.label);
         }
