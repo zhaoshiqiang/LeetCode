@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**第138题 复制带随机指针的链表
  * A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
  * Created by zhaoshiqiang on 2017/1/13.
  */
