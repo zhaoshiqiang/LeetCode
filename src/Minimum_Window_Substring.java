@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**第76题
  * Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
@@ -107,11 +109,19 @@ public class Minimum_Window_Substring {
         if (tlength >slength){
             return "";
         }
+        if (tlength == 1){
+            if (s.contains(t)){
+                return t;
+            }else {
+                return "";
+            }
+        }
         char[] schars = s.toCharArray();
         char[] tchars = t.toCharArray();
         int[] needfind=new int[128];
         int[] find=new int[128];
-        int left=0,right=0,flag=0;
+        int left=0,right=0;
+        Queue<Integer> queue = new LinkedList<>();
         int differentnum=tlength;
         node minnode=null;
         //记录目标字符串中每个字母出现的次数
@@ -121,6 +131,9 @@ public class Minimum_Window_Substring {
         while (right < slength){
             //每个字符出现次数加1
             find[schars[right]]++;
+            if (needfind[schars[right]] > 0 && right!=left){
+                queue.offer(right);
+            }
             // 如果加1后这个字符的数量不超过目标串中该字符的数量，则找到了一个匹配字符，相异数目减1
             if (needfind[schars[right]] >= find[schars[right]]){
                 differentnum--;
@@ -130,16 +143,18 @@ public class Minimum_Window_Substring {
                 // 将开头没用的都跳过，没用是指该字符出现次数超过了目标串中出现的次数，并把它们出现次数都减1
                 while (left<right && find[schars[left]]>needfind[schars[left]]){
                     find[schars[left]]--;
-                    left++;
+                    left=queue.poll();
                 }
                 // 这时候left指向该子串开头的字母，判断该子串长度
                 if (minnode==null || minnode.length>right-left+1){
                     minnode=new node(left,right);
                 }
                 // 把开头的这个匹配字符跳过，并将相异数目+1，子串其实位置+1，开始下一次匹配
-                find[schars[left]]--;
-                left++;
-                differentnum++;
+                if (!queue.isEmpty()){
+                    find[schars[left]]--;
+                    left=queue.poll();
+                    differentnum++;
+                }
             }
             right++;
         }
@@ -190,10 +205,10 @@ public class Minimum_Window_Substring {
         return begin == -1 ? "" : S.substring(begin,end + 1);
     }
     public static void main(String[] args){
+        System.out.println(minWindowII("ADOBECODEBANC", "ABC"));
         System.out.println(minWindowII("bba", "ba"));
         System.out.println(minWindowII("abc", "bc"));
         System.out.println(minWindowII("ab", "b"));
-        System.out.println(minWindowII("ab","a"));
-        System.out.println(minWindowII("ADOBECODEBANC", "ABC"));
+        System.out.println(minWindowII("ab", "a"));
     }
 }
