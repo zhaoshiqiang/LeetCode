@@ -66,7 +66,7 @@ public class Find_All_Anagrams_in_a_String {
         }
         return result;
     }
-
+    //这里用的是第二种方法，这里假设一共有26个字符
     public static List<Integer> findAnagramsII(String s, String p) {
         List<Integer> re = new ArrayList<Integer>();
         int[] pNum = new int[26];
@@ -96,7 +96,7 @@ public class Find_All_Anagrams_in_a_String {
 
         return re;
     }
-    //这里用的是第二种方法，这里假设一共有26个字符
+
     public static boolean compare(int[] v1, int[] v2) {
         for (int i = 0; i < v1.length; i++) {
             if (v1[i] != v2[i]) {
