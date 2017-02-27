@@ -101,6 +101,5 @@ public class Populating_Next_Right_Pointers_in_Each_Node {
         p3.left=p6;
         p3.right=p7;
         new Populating_Next_Right_Pointers_in_Each_Node().connectII(p1);
-
     }
 }
