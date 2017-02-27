@@ -58,5 +58,9 @@ public class Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal {
         TreeNode root = buildTree(inorder,postorder);
         System.out.println();
         bst(root);
+//        System.out.println();
+//        int i=0;
+//        i=i++;
+//        System.out.println(i);
     }
 }
