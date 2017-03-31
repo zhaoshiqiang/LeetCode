@@ -9,7 +9,7 @@
      Return 3.
  * Created by zhaoshiqiang on 2017/3/27.
  */
-//动态规划
+//线性动态规划
 public class Distinct_Subsequences {
     /*
     * 无论T的字符与S的字符是否匹配，dp[i][j] = dp[i][j - 1].就是说，假设S已经匹配了j - 1个字符，得到匹配个数为dp[i][j - 1].
@@ -24,16 +24,20 @@ public class Distinct_Subsequences {
     public int numDistinct(String s, String t) {
         int[][] dp = new int[t.length() + 1][s.length() + 1];
         dp[0][0] = 1;
+        //S是空串，T不是空串，S没有子序列匹配。
         for (int i = 1; i <=t.length(); i++) {
             dp[i][0] = 0;
         }
+        //T是空串，S只有一种子序列匹配。
         for (int j = 1; j <= s.length(); j++) {
             dp[0][j] = 1;
         }
         for (int i = 1; i <= t.length(); i++) {
             for (int j = 1; j <= s.length(); j++) {
+                //无论T的字符与S的字符是否匹配，dp[i][j] = dp[i][j - 1]，也就是说去掉T和S的字符后，就有这么多匹配了
                 dp[i][j] = dp[i][j - 1];
                 if (t.charAt(i - 1) == s.charAt(j - 1)) {
+                    //若是相等，我们可以让让S[j]和T[i]匹配，然后让S[j - 1]和T[i - 1]去匹配，这样就要再加上dp[i - 1][j - 1]
                     dp[i][j] += dp[i - 1][j - 1];
                 }
             }
