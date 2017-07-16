@@ -29,6 +29,7 @@ public class Jump_Game {
         * */
         int local = nums[0];
         int global = nums[0];
+        //这里的i限制在最远到达的距离和数组长度内
         for (int i=1; i<nums.length && i <= global ; i++){
             local = nums[i] + i;
             global = Math.max(global,local);
