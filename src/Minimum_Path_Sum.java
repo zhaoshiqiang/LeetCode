@@ -5,6 +5,7 @@
     Note: You can only move either down or right at any point in time.
  * Created by zhaoshiqiang on 2017/7/16.
  */
+//区间动态规划
 public class Minimum_Path_Sum {
     public static int minPathSum(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0){
@@ -15,7 +16,9 @@ public class Minimum_Path_Sum {
         //dp[i][j]表示当前位置的最小路径和
         int[][] dp = new int[m][n];
         //第一步：确定状态转移方程：
-        // 若要到达i，j位置的路径，只有通过i-1，j 或者 i，j-1，则有方程dp[i][j] = grid[i][j] + min(dp[i - 1][j], dp[i][j - 1]);
+        // 当i>0，j>0时，若要到达i，j位置的路径，只有通过i-1，j 或者 i，j-1，则有方程dp[i][j] = grid[i][j] + min(dp[i - 1][j], dp[i][j - 1]);
+        // 当i>0，j=0时，若要到达i，j位置的路径，只有通过i-1，0，则有方程dp[i][0] = grid[i][0] + dp[i-1][0];
+        // 当i=0，j>0时，若要到达i，j位置的路径，只有通过0，j-1，则有方程dp[0][j] = grid[0][j] + dp[0][j-1];
         //第二步：确定初始条件
         dp[0][0] = grid[0][0];
         for (int i=1; i < m; i++){
