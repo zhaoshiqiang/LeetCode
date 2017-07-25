@@ -6,18 +6,17 @@
 //链表倒序（前插法）
 public class Reverse_Linked_List {
     public static ListNode reverseList(ListNode head) {
-        if (head==null || head.next==null){
-            return head;
+        //前插法标准写法
+        ListNode dummy = new ListNode(-1);
+        dummy.next = null;
+        ListNode ptemp, p =head;
+        while (p != null){
+            ptemp = p.next;
+            p.next = dummy.next;
+            dummy.next = p;
+            p = ptemp;
         }
-        ListNode p = head.next;
-        head.next=null;
-        while (p!=null){
-            ListNode node = p.next;
-            p.next=head;
-            head=p;
-            p=node;
-        }
-        return head;
+        return dummy.next;
     }
 
     public static class ListNode {
