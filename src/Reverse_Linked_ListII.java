@@ -21,19 +21,22 @@ public class Reverse_Linked_ListII {
         for (int i=1; i<m; i++){
             cur=cur.next;
         }
-        pre=cur;
-        last=cur.next;
-        //这里是把m,n之间的节点全部从原链表拉出来倒序排，front指向单拉出来的表头
-        for (int i=m; i<=n; i++){
-            cur=pre.next;
-            pre.next=cur.next;
-            cur.next=front;
-            front=cur;
+        //这里是把m,n之间的节点全部从原链表拉出来倒序排，newtail指向单拉出来的表头
+        ListNode newdummy = new ListNode(-1);
+        ListNode newtail = cur.next;
+        ListNode p = cur.next;
+        ListNode ptemt = null;
+        for (int i = m; i <= n; i++) {
+            //这里是标准的前插法倒叙链表
+            ptemt = p.next;
+            p.next = newdummy.next;
+            newdummy.next = p;
+            p = ptemt;
         }
-        cur = pre.next;
-        pre.next = front;
-        last.next = cur;
-        //这里不能是head，否则当m=1时，head并不是链表头
+        //将新链表与原链表对接上
+        cur.next = newdummy.next;
+        newtail.next = p;
+
         return dummy.next;
     }
 
