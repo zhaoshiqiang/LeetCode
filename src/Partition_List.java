@@ -7,6 +7,7 @@
      return 1->2->2->4->3->5.
  * Created by zhaoshiqiang on 2017/2/1.
  */
+//链表——快排思想应用
 public class Partition_List {
     public static ListNode partition(ListNode head, int x) {
         if (head==null || head.next == null){
@@ -17,6 +18,7 @@ public class Partition_List {
         ListNode p = head;
         ListNode pless = lessnode;
         ListNode pgreater = greaternode;
+        //将链表以x为界限分开
         while (p!=null){
             if (p.val < x){
                 pless.next=p;
@@ -28,18 +30,21 @@ public class Partition_List {
                 pgreater=pgreater.next;
             }
         }
+        //处理每段链表的尾节点
         if (pless!=null){
             pless.next=null;
         }
         if (pgreater!=null){
             pgreater.next=null;
         }
+        //如果有段链表为空，则直接返回另一段
         if (lessnode.next == null){
             return greaternode.next;
         }
         if (greaternode.next == null){
             return lessnode.next;
         }
+        //将两段链表连接起来
         p=lessnode.next;
         while (p.next!=null){
             p=p.next;
