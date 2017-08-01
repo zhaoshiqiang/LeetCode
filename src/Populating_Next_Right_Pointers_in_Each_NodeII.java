@@ -26,7 +26,7 @@ public class Populating_Next_Right_Pointers_in_Each_NodeII {
         TreeLinkNode head = root;
         while (head != null){
             TreeLinkNode cur = head;
-            //将curNode下一层的节点全部连起来，tmpNextHead作为这个链表的头指针
+            //将curNode下一层的节点全部连起来，dummy作为这个链表的头指针
             TreeLinkNode dummy = new TreeLinkNode(0);
             TreeLinkNode pre = dummy;
             while (cur != null){
@@ -40,6 +40,7 @@ public class Populating_Next_Right_Pointers_in_Each_NodeII {
                 }
                 cur=cur.next;
             }
+            //将head指向下一层的开头
             head=dummy.next;
         }
     }
