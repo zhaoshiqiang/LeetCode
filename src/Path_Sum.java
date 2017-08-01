@@ -30,26 +30,6 @@ public class Path_Sum {
         //递归条件是看左子树或者右子树有没有满足条件的路径，也就是子树路径和等于当前sum-root.val
         return hasPathSum(root.left,sum-root.val) || hasPathSum(root.right, sum-root.val);
     }
-
-    /**
-     *
-     * @param p 遍历的节点
-     * @param value p的祖先节点之和
-     * @param sum 要对比的值
-     * @return
-     */
-    public static boolean checkPathSum(TreeNode p, int value ,int sum){
-        if (p == null){
-            if (value == sum){
-                return true;
-            }else {
-                return false;
-            }
-        }
-        value += p.val;
-
-        return checkPathSum(p.left,value,sum) || checkPathSum(p.right, value,sum);
-    }
     static class TreeNode {
         int val;
         TreeNode left;
