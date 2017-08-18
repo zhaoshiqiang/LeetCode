@@ -38,9 +38,8 @@ public class Word_Ladder {
         this.start = beginWord;
         this.end = endWord;
         this.dict = wordList;
-        dict.contains(end);
-        dict.add(end);
-        dict.remove(start);
+        dict.add(end);  //方便bfs中判断是否能转化到end中
+        dict.remove(start); //防止成环
         if (bfs()){
             return wordlayer.get(end);
         }
@@ -64,6 +63,7 @@ public class Word_Ladder {
                     chars[i]=j;
                     String newword = String.valueOf(chars);
                     if (dict.contains(newword) && !wordlayer.containsKey(newword)){
+                        //找到符合要求的数，对其操作，压入队列
                         wordlayer.put(newword,layer+1);
                         queue.offer(newword);
                         if (newword.equals(end)){
