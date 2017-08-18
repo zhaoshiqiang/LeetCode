@@ -33,6 +33,7 @@ public class Binary_Tree_Level_Order_Traversal {
             List<Integer> list ;
             TreeNode node = queue.poll();
             int layer = layertree.get(node);
+            //对节点进行处理
             if (result.size()<=layer){
                 list=new ArrayList<>();
                 result.add(list);
@@ -41,6 +42,7 @@ public class Binary_Tree_Level_Order_Traversal {
                 list = result.get(layer);
                 list.add(node.val);
             }
+            //扩展节点，将其入队
             if (node.left != null){
                 queue.offer(node.left);
                 layertree.put(node.left,layer+1);
