@@ -31,6 +31,7 @@ public class Surrounded_Regions {
             return;
         }
         Queue<Node> queue = new LinkedList();
+        //将矩形四周的0加入
         for (int j=0; j<ymax ;j++){
             if (board[j][0] == 'O'){
                 Node n = new Node(0,j);
@@ -67,7 +68,7 @@ public class Surrounded_Regions {
                 }
             }
         }
-
+        //bfs找到最后为0的点
         while (!queue.isEmpty()){
             Node node = queue.poll();
             getObynode(node.x,node.y,board,queue);
