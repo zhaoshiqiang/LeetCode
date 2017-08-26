@@ -12,6 +12,7 @@ package dynamic_programming;
      What is the minimum candies you must give?
  * Create by zhaoshiqiang on 10:11 2017/8/19
  */
+//贪心算法
 public class Candy {
 
     public static int candy(int[] ratings) {
