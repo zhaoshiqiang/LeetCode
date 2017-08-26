@@ -14,6 +14,7 @@ import java.util.Set;
  Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
  * Created by zhaoshiqiang on 2017/1/13.
  */
+//删除数组中重复元素
 public class Remove_Duplicates_from_Sorted_Array {
 
     public static int removeDuplicates(int[] nums) {
