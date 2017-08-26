@@ -13,7 +13,7 @@ package dynamic_programming;
      Return 3.
  * Created by zhaoshiqiang on 2017/3/27.
  */
-//线性动态规划
+//区间动态规划
 public class Distinct_Subsequences {
     /*
     * 无论T的字符与S的字符是否匹配，dp[i][j] = dp[i][j - 1].就是说，假设S已经匹配了j - 1个字符，得到匹配个数为dp[i][j - 1].
