@@ -2,10 +2,10 @@ package dynamic_programming;
 
 /**
  * 第72题
- *  Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. (each operation is counted as 1 step.)
+ *  Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2.
+ *  (each operation is counted as 1 step.)
 
      You have the following 3 operations permitted on a word:
-
      a) Insert a character
      b) Delete a character
      c) Replace a character
@@ -21,9 +21,13 @@ public class Edit_Distance {
         /*
         * 第一步：确定状态转移方程：
         * dp[i][j]的计算规则有三条：
-        * 来自dp[i - i][j - 1]，即 “str1的前i-1个字符组成的子串” 到 “str2的前j-1个字符组成的子串” 的最小距离，此时如果str1[i] = str2[j]，则最短距离不变，否则最短距离加1(即把str1[i]变为str2[j] )，所以dp[i][j] = dp[i - 1][j - 1] + (str1[i] == str2[j] ? 0 : 1)
-        * 来自dp[i - 1][j]，即 “A的前i-1个字符组成的子串” 到 “B的前j个字符组成的子串” 的编辑距离。此时删除在A的第i个位置上的字符即可，所以dp[i][j] = dp[i - 1][j] + 1
-        * 来自dp[i][j - 1], 即 “A的前i个字符组成的子串” 到 “B的前j-1个字符组成的子串” 的编辑距离。此时在A的子串后面添加一个字符B[j]即可，所以dp[i][j] = dp[i][j - 1] + 1
+        * 1、来自dp[i - i][j - 1]，即 “str1的前i-1个字符组成的子串” 到 “str2的前j-1个字符组成的子串” 的最小距离，
+        *       此时如果str1[i] = str2[j]，则最短距离不变，否则最短距离加1(即把str1[i]变为str2[j] )，
+        *       所以dp[i][j] = dp[i - 1][j - 1] + (str1[i] == str2[j] ? 0 : 1)
+        * 2、来自dp[i - 1][j]，即 “A的前i-1个字符组成的子串” 到 “B的前j个字符组成的子串” 的编辑距离。
+        *       此时删除在A的第i个位置上的字符即可，所以dp[i][j] = dp[i - 1][j] + 1
+        * 3、来自dp[i][j - 1], 即 “A的前i个字符组成的子串” 到 “B的前j-1个字符组成的子串” 的编辑距离。
+        *       此时在A的子串后面添加一个字符B[j]即可，所以dp[i][j] = dp[i][j - 1] + 1
         * 则状态转移方程：dp[i][j] = min (dp[i - 1][j - 1] + (str1[i-1] == str2[j-1] ? 0 : 1) , dp[i - 1][j] + 1 , dp[i][j - 1] + 1)
         * */
         //第二步，确定初始状态
