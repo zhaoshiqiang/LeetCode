@@ -3,7 +3,6 @@ package dynamic_programming;
 /**
  * 第152题
  *  Find the contiguous subarray within an array (containing at least one number) which has the largest product.
-
      For example, given the array [2,3,-2,4],
      the contiguous subarray [2,3] has the largest product = 6.
  * Created by zhaoshiqiang on 2017/7/17.
