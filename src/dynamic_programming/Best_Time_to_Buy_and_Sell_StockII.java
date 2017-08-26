@@ -11,6 +11,7 @@ package dynamic_programming;
      然而，你不可以从事多个事务在同一时间（即，你必须卖出股票，在你再次购买之前）
  * Created by zhaoshiqiang on 2017/1/26.
  */
+//贪心 多重背包
 public class Best_Time_to_Buy_and_Sell_StockII {
     public static int maxProfit(int[] prices) {
         if (prices.length==0 || prices==null){
