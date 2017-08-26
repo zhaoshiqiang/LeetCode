@@ -9,6 +9,7 @@ package dynamic_programming;
  You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
  * Created by zhaoshiqiang on 2017/1/27.
  */
+//Best_Time_to_Buy_and_Sell_StockIV的特例
 public class Best_Time_to_Buy_and_Sell_StockIII {
     public static int maxProfit(int[] prices) {
         if(prices==null || prices.length==0)
