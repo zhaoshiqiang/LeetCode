@@ -2,12 +2,14 @@ package array;
 
 /**第80题
  * Follow up for "Remove Duplicates":
- What if duplicates are allowed at most twice?
+     What if duplicates are allowed at most twice?
 
- For example,
- Given sorted array nums = [1,1,1,2,2,3],
+     For example,
+     Given sorted array nums = [1,1,1,2,2,3],
 
- Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
+     Your function should return length = 5,
+     with the first five elements of nums being 1, 1, 2, 2 and 3.
+     It doesn't matter what you leave beyond the new length.
  * Created by zhaoshiqiang on 2017/1/13.
  */
 //数组 也可以用hash表
