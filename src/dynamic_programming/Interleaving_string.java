@@ -3,16 +3,16 @@ package dynamic_programming;
 /**
  * 97题：Given s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
 
- For example,
- Given:
- s1 = "aabcc",
- s2 = "dbbca",
+     For example,
+     Given:
+     s1 = "aabcc",
+     s2 = "dbbca",
 
- When s3 = "aadbbcbcac", return true.
- When s3 = "aadbbbaccc", return false.
+     When s3 = "aadbbcbcac", return true.
+     When s3 = "aadbbbaccc", return false.
  * Created by zhaoshiqiang on 2016/12/29.
  */
-//算法：线性动态规划，类似于最长公共子序列
+//区间动态规划，类似于最长公共子序列
 public class Interleaving_string {
     public static boolean isInterleave(String s1, String s2, String s3) {
         int length3=s3.length();
