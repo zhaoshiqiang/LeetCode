@@ -18,7 +18,7 @@ package dynamic_programming;
 
  * Created by zhaoshiqiang on 2017/7/16.
  */
-//线性动态规划
+//线性动态规划，动态规划解题步骤
 public class Decode_Ways {
 
     public static int numDecodings(String s){
