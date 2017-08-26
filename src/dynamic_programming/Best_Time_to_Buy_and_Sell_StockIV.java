@@ -7,7 +7,6 @@ package dynamic_programming;
      You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again)
  * Created by zhaoshiqiang on 2017/1/27.
  */
-//背包动态规划
 /*
 * 传统的动态规划我们会这样想，到第i天时进行j次交易的最大收益，
 * 要么等于到第i-1天时进行j次交易的最大收益（第i天价格低于第i-1天的价格），要么等于到第i-1天时进行j-1次交易，
@@ -28,6 +27,7 @@ package dynamic_programming;
 第二个量则是取local第i-1天j次交易，然后加上今天的差值
 （这里因为local[i-1][j]比如包含第i-1天卖出的交易，所以现在变成第i天卖出，并不会增加交易次数，而且这里无论diff是不是大于0都一定要加上，因为否则就不满足local[i][j]必须在最后一天卖出的条件了）。
 * */
+//局部最优+全局最优
 public class Best_Time_to_Buy_and_Sell_StockIV {
 
     public static int maxProfit(int k, int[] prices) {
