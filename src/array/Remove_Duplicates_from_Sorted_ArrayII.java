@@ -12,7 +12,7 @@ package array;
      It doesn't matter what you leave beyond the new length.
  * Created by zhaoshiqiang on 2017/1/13.
  */
-//数组 也可以用hash表
+//数组 也可以用hash表，删除数组中次数超过2的部分
 public class Remove_Duplicates_from_Sorted_ArrayII {
     public static int removeDuplicates(int[] nums) {
         int length = nums.length;
