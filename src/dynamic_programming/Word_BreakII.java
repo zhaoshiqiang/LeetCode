@@ -7,18 +7,17 @@ import java.util.Set;
 
 /**
  * 140题：
- * Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where each word is a valid dictionary word.
+ * Given a string s and a dictionary of words dict,
+ * add spaces in s to construct a sentence where each word is a valid dictionary word.
+     Return all such possible sentences.
 
- Return all such possible sentences.
-
- For example, given
- s = "catsanddog",
- dict = ["cat", "cats", "and", "sand", "dog"].
-
- A solution is ["cats and dog", "cat sand dog"]
+     For example, given
+     s = "catsanddog",
+     dict = ["cat", "cats", "and", "sand", "dog"].
+     A solution is ["cats and dog", "cat sand dog"]
  * Created by zhaoshiqiang on 2016/12/29.
  */
-//算法：动态规划-区间+深度优先遍历
+//线性动态规划+深度优先遍历
 public class Word_BreakII {
     public static List<String> wordBreak(String s, Set<String> wordDict) {
         int length = s.length();
