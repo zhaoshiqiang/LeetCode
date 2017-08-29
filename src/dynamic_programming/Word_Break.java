@@ -41,13 +41,6 @@ public class Word_Break {
                     dp[end]=true;   //标记可拆分成词
                 }
             }
-//            for (int j=0; j<=i; j++){
-//                //状态转移
-//                if (dp[j] && wordDict.contains(s.substring(j,i))){
-//                    dp[i]=true;
-//                    break;
-//                }
-//            }
         }
         return dp[length];
     }
