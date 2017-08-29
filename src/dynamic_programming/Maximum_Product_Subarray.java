@@ -7,7 +7,7 @@ package dynamic_programming;
      the contiguous subarray [2,3] has the largest product = 6.
  * Created by zhaoshiqiang on 2017/7/17.
  */
-//局部最优+全局最优解法
+//局部最优+全局最优解法，数组中连续的最大乘积
 public class Maximum_Product_Subarray {
 
     public static int maxProduct(int[] nums) {
