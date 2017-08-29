@@ -26,7 +26,7 @@ public class Jump_GameII {
          * 其实思路和Jump Game还是类似的，只是原来的全局最优现在要分成step步最优和step-1步最优（假设当前步数是step）。
          * 当走到超过step-1步最远的位置时，说明在step-1内不能到达当前这一步，我们就更新步数，step++。
          */
-        int lastReach = 0;
+        int lastReach = 0;  //step-1步最优到达的位置
         int global = 0;
         int local = 0;
         int step = 0;
