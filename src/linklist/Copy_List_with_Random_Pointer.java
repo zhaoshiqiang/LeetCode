@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 /**第138题 复制带随机指针的链表
- * A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
+ * A linked list is given such that each node contains an additional random pointer
+ * which could point to any node in the list or null.
  * Created by zhaoshiqiang on 2017/1/13.
  */
 //哈希表 or 链表
@@ -14,7 +15,8 @@ public class Copy_List_with_Random_Pointer {
      * 普通的链表复制就是遍历一次就能够得到结果，因此遍历一次我们可以将next这个链表复制完成，
      * 这个题的难点在于如何找到新链表中每个节点random所指向的节点
      * 一个思路是：
-     *   首先指向在原链表的每个节点后面，复制一个新的节点，原链表长度变为2倍，random 指针指向的是原链表节点 random 指针指向的节点的后面的那个节点
+     *   首先指向在原链表的每个节点后面，复制一个新的节点，原链表长度变为2倍，
+     *   random 指针指向的是原链表节点 random 指针指向的节点的后面的那个节点
      *   之后将链表拆分成两个list
      * 另一个思路是：
      *   用map来存储复制节点与原始节点的关系，这个因为涉及到查询map，所以速度要比上一个慢很多
