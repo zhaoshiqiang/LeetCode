@@ -3,13 +3,13 @@ package dynamic_programming;
 /**
  * 第132题 Palindrome Partitioning II
  *  Given a string s, partition s such that every substring of the partition is a palindrome.
-
      Return the minimum cuts needed for a palindrome partitioning of s.
 
      For example, given s = "aab",
      Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 cut.
  * Created by zhaoshiqiang on 2017/7/16.
  */
+//区间动态规划，回文串的最小切割
 public class Palindrome_PartitioningII {
     public static int minCut(String s) {
         //判断每个子串是否为回文，可以通过区间动态规划完成
