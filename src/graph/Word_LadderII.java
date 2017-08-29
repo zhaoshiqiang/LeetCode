@@ -5,9 +5,8 @@ import java.util.*;
 /**第126题
  * Given two words (beginWord and endWord), and a dictionary's word list,
  * find all shortest transformation sequence(s) from beginWord to endWord, such that:
-
- Only one letter can be changed at a time
- Each intermediate word must exist in the word list
+     Only one letter can be changed at a time
+     Each intermediate word must exist in the word list
  * Created by zhaoshiqiang on 2017/1/3.
  */
 //算法:BFS and DFS数据结构：hashmap
