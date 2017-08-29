@@ -10,7 +10,7 @@ import dynamic_programming.Jump_Game;
     the contiguous subarray [4,-1,2,1] has the largest sum = 6.
  * Created by zhaoshiqiang on 2017/7/16.
  */
-//非常经典的动态规划题目，“局部最优+全局最优解法”
+//非常经典的动态规划题目，“局部最优+全局最优解法”，数组中连续最大和
 public class Maximum_Subarray {
 
     public static int maxSubArray(int[] nums) {
