@@ -3,12 +3,9 @@ package dynamic_programming;
 /**
  * 第44题
  * Implement wildcard pattern matching with support for '?' and '*'.
-
      '?' Matches any single character.
      '*' Matches any sequence of characters (including the empty sequence).
-
      The matching should cover the entire input string (not partial).
-
      The function prototype should be:
      bool isMatch(const char *s, const char *p)
 
@@ -20,7 +17,6 @@ package dynamic_programming;
      isMatch("aa", "a*") ? true
      isMatch("ab", "?*") ? true
      isMatch("aab", "c*a*b") ? false
-
  * Created by zhaoshiqiang on 2017/7/17.
  */
 //区间动态规划
@@ -38,7 +34,8 @@ public class Wildcard_Matching {
         * 确定状态转移方程：
         * 当s[i] = p[j]时，比较s[0...i-1]和p[0...j-1]这两个串是否匹配，即dp[i+1][j+1] = dp[i][j];
         * 当p[j] = '?'时，s[i]无论何值都匹配，则比较s[0...i-1]和p[0...j-1]这两个串是否匹配，即dp[i+1][j+1] = dp[i][j];
-        * 当p[j] = '*'时，则若s[0...i]和p[0...j-1]匹配（abc，a?c*），则其匹配，或者，若s[0...i-1]和p[0...j]匹配（abcde，a?c*），则其也匹配。即dp[i+1][j+1] = dp[i][j] || dp[i][j];;
+        * 当p[j] = '*'时，则若s[0...i]和p[0...j-1]匹配（abc，a?c*），则其匹配，
+        *                   或者，若s[0...i-1]和p[0...j]匹配（abcde，a?c*），则其也匹配。即dp[i+1][j+1] = dp[i][j] || dp[i][j];;
         * 其余则为false
         * */
         //确定初始条件
