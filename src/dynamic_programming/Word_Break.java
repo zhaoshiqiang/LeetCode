@@ -5,7 +5,9 @@ import java.util.Set;
 
 /**
  * 139题：
- * Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
+ * Given a string s and a dictionary of words dict,
+ * determine if s can be segmented into a space-separated sequence of
+ * one or more dictionary words.
 
      For example, given
      s = "leetcode",
@@ -14,7 +16,7 @@ import java.util.Set;
      Return true because "leetcode" can be segmented as "leet code".
  * Created by zhaoshiqiang on 2016/12/29.
  */
-//算法：动态规划-区间，类似于切钢条
+//线性动态规划，类似于切钢条
 public class Word_Break {
     public static boolean wordBreak(String s, Set<String> wordDict) {
         int length = s.length();
