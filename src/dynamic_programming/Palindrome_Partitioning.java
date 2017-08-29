@@ -6,7 +6,6 @@ import java.util.List;
 /**
  * 第131 Palindrome Partitioning
  *  Given a string s, partition s such that every substring of the partition is a palindrome.
-
      Return all possible palindrome partitioning of s.
 
      For example, given s = "aab",
@@ -29,7 +28,8 @@ public class Palindrome_Partitioning {
         boolean[][] palindrome = dp(s);
         /*
         * 得到回文子串的结果之后我们该如何利用去获得所有可能的划分呢？
-        * 此时，该问题就变为一个典型的深搜问题，问题的解空间就是所有可能划分的划分树，我们只需要遍历所有的分支直到叶节点，即为一个可能的划分。
+        * 此时，该问题就变为一个典型的深搜问题，问题的解空间就是所有可能划分的划分树，
+        * 我们只需要遍历所有的分支直到叶节点，即为一个可能的划分。
         * */
         dfs(palindrome,ret,new ArrayList<String>(),0,s);
         return ret;
@@ -40,7 +40,8 @@ public class Palindrome_Partitioning {
         int length = s.length();
         char[] chars = s.toCharArray();
 
-        //定义P[i][j]表示字符串从i到j的子串是否为回文串。若p[i][j]=ture的话，表明：string[i..j]是一个回文字符串
+        //定义P[i][j]表示字符串从i到j的子串是否为回文串。
+        // 若p[i][j]=ture的话，表明：string[i..j]是一个回文字符串
         boolean[][] p = new boolean[length][length];
         /*
         * 第一步：确定状态转移方程：
