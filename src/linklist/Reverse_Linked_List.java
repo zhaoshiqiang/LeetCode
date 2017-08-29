@@ -2,7 +2,6 @@ package linklist;
 
 /**第206题
  * Reverse a singly linked list.
- *
  * Created by zhaoshiqiang on 2017/2/1.
  */
 //链表倒序（前插法）
