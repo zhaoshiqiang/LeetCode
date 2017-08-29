@@ -8,11 +8,11 @@ import java.util.List;
      A mapping of digit to letters (just like on the telephone buttons) is given below.
      Input:Digit string "23"
      Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
- Note:
- Although the above answer is in lexicographical order, your answer could be in any order you want.
+     Note:
+     Although the above answer is in lexicographical order, your answer could be in any order you want.
  * Created by zhaoshiqiang on 2017/2/25.
  */
-//DFS of BFS
+//DFS or BFS
 public class Letter_Combinations_of_a_Phone_Number {
     private String[] charmap = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
     List<String> ret = new ArrayList<>();
