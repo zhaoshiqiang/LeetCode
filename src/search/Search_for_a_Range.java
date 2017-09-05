@@ -1,10 +1,9 @@
 package search;
 
 /**第34题
- * Given an array of integers sorted in ascending order, find the starting and ending position of a given target value.
-
+ * Given an array of integers sorted in ascending order,
+ * find the starting and ending position of a given target value.
      Your algorithm's runtime complexity must be in the order of O(log n).
-
      If the target is not found in the array, return [-1, -1].
 
      For example,
@@ -37,6 +36,7 @@ public class Search_for_a_Range {
         while (low <= high){
             int mid = (low+high)/2;
             pos=mid;
+            //保证每次循环的时候，搜索范围都减小，从而避免出现死循环
             if (nums[mid] < target){
                 low = mid+1;
             }else if (nums[mid] > target){
