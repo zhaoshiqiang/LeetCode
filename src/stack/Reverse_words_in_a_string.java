@@ -1,9 +1,8 @@
 package stack;
 
-import java.util.Stack;
-
 /**
- * 151题：Given an input string, reverse the string word by word.
+ * 151题：
+ * Given an input string, reverse the string word by word.
 
      For example,
      Given s = "the sky is blue",
