@@ -4,7 +4,9 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**第23题
- * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+ * Merge k sorted linked lists and return it as one sorted list.
+ * Analyze and describe its complexity.
+ *
  * Created by zhaoshq on 2017/3/16.
  */
 //外排序
