@@ -3,11 +3,14 @@ package stack;
 import java.util.Stack;
 
 /**第20题
- * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+ * Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
+ * determine if the input string is valid.
 
-     The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+     The brackets must close in the correct order,
+ "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
  * Created by zhaoshiqiang on 2017/1/26.
  */
+//栈
 public class Valid_Parentheses {
     public static boolean isValid(String s) {
         if (s == null){
