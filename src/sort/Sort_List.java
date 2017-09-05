@@ -56,6 +56,7 @@ public class Sort_List {
         }
         return newhead.next;
     }
+
     static class ListNode {
          int val;
          ListNode next;
