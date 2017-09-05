@@ -17,7 +17,7 @@ import java.util.Stack;
       3
      return [1,3,2].
 
-     Note: Recursive solution is trivial, could you do it iteratively?
+     Note: Recursive Main_zhongxing is trivial, could you do it iteratively?
  * Created by zhaoshq on 2017/8/2.
  */
 //二叉树 中序遍历
@@ -31,10 +31,12 @@ public class Binary_Tree_Inorder_Traversal {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode p = root;
         while ( p != null || !stack.isEmpty()){
+            //将左子树压栈
             while (p != null){
                 stack.push(p);
                 p = p.left;
             }
+            //访问中间节点，并转入右子树
             if (!stack.isEmpty()){
                 p = stack.pop();
                 ret.add(p.val);
