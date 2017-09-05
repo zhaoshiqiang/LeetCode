@@ -17,13 +17,18 @@ public class Insertion_Sort_List {
         ListNode p=dummy.next;
         ListNode q=head;
         while (q!=null){
+            //从前往后找到q的位置
             while (p!=null && p.val<q.val){
                 pre=p;
                 p=p.next;
             }
+            //将节点插入
             pre.next=q;
+            //将下一个比较节点记录下来
             q=q.next;
+            //将有序链表接上
             pre.next.next=p;
+            //准备下一次比较
             p=dummy.next;
             pre=dummy;
         }
@@ -43,12 +48,12 @@ public class Insertion_Sort_List {
         ListNode node1 = new ListNode(3);
         ListNode node2 = new ListNode(4);
         ListNode node3 = new ListNode(1);
-//        ListNode node4 = new ListNode(6);
-//        ListNode node5 = new ListNode(8);
+        ListNode node4 = new ListNode(6);
+        ListNode node5 = new ListNode(8);
         node1.next=node2;
         node2.next=node3;
-//        node3.next=node4;
-//        node4.next=node5;
+        node3.next=node4;
+        node4.next=node5;
         ListNode p = insertionSortList(node1);
 
         while ( p!=null ){
