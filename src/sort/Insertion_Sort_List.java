@@ -2,6 +2,7 @@ package sort;
 
 /**第147
  * Sort a linked list using insertion sort.
+ *
  * Created by zhaoshiqiang on 2017/2/14.
  */
 //链表插入排序，这里要从表头开始往后搜索
