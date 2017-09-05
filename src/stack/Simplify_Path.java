@@ -19,6 +19,7 @@ public class Simplify_Path {
         }
         String[] strings = path.split("/");
         Stack<String> stack = new Stack<>();
+        //利用栈简化路径
         for (int i=0; i<strings.length; i++){
             String s = strings[i].trim();
             switch (s){
@@ -30,10 +31,12 @@ public class Simplify_Path {
                 default:stack.push(s);
             }
         }
+        //将栈中元素弹出，此时list中元素是倒叙的
         List<String> list = new ArrayList<>();
         while (!stack.isEmpty()){
             list.add(stack.pop());
         }
+        //在目录间添加/
         StringBuffer buffer = new StringBuffer();
         for (int i=list.size()-1;i>=0;i--){
             buffer.append("/").append(list.get(i));
