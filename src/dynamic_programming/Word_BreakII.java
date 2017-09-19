@@ -41,13 +41,6 @@ public class Word_BreakII {
                     dp[i].list.add(end);
                 }
             }
-//            for (int j=0; j<=i; j++){
-//                //状态转移
-//                if (dp[j] && wordDict.contains(s.substring(j,i))){
-//                    dp[i]=true;
-//                    break;
-//                }
-//            }
         }
         if (dp[length].sign == true){
             //可拆分
