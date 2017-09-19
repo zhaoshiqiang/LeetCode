@@ -26,7 +26,6 @@ public class Word_LadderII {
         this.start = start;
         this.end = end;
         this.dict = dict;
-        dict.contains(end);
         dict.add(end);
         dict.remove(start);
         //从start到end如果存在路径，则生成对应的树，wordlayer记录树中每个单词所在层数
@@ -41,10 +40,12 @@ public class Word_LadderII {
         Queue<String> queue = new LinkedList();
         queue.offer(start);
         wordlayer.put(start, 0);
+
         String current;
         while (!queue.isEmpty()){
             current = queue.poll();
             int layer = wordlayer.get(current);
+            //扩展节点
             List<String> strings = stringlistByword(current);
             for (String s : strings){
                 //每个单词在path中只能出现一次，也就是每个单词只能出现在一层中，这样就很巧妙的解决了环的问题。
@@ -61,11 +62,12 @@ public class Word_LadderII {
         return false;   //没有对应的路径从start到end
     }
     //从目标单词往回找开始单词，记录所有路径
-    void dfs(String word,ArrayList<String> pathArray,List<List<String>> result,Set<String> wordset) {
-
+    void dfs(String word,List<String> pathArray,List<List<String>> result,Set<String> wordset) {
+        //先将单词添加入路径
         pathArray.add(word);
 
         if (word.equals(end)){
+            //将有效路径添加进结果集
             result.add(pathArray);
             return;
         }
