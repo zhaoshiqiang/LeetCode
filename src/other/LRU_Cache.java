@@ -67,13 +67,8 @@ public class LRU_Cache {
      * @param note
      */
     private void operateAdd(Note note){
-        Note p = head;
-        //将新节点前插入链表
-        head=note;
-        note.next=p;
-        if (p!=null){
-            p.pre=note;
-        }
+
+        moveNode2Head(note);
         //链表长度+1
         size++;
         if (size == 1){
@@ -92,28 +87,31 @@ public class LRU_Cache {
      */
     private void operateUpdate(Note note){
         //只把对应节点调整到链表首位
-        if (head == note){
-            return;
-        }else {
+        if (head != note){
             //把note原来位置的前后节点链接起来
             note.pre.next=note.next;
-            if (note.next != null){
+            if (tail != note){
+                //node节点不在尾部
                 note.next.pre=note.pre;
-            }
-            //如果note在尾部
-            if (tail == note){
+            }else {
+                //node节点在尾部
                 tail=note.pre;
             }
+
             //把note移动到链表首位
-            Note p = head;
-            head=note;
-            head.next=p;
-            head.pre=null;
-            if (p!=null){
-                p.pre=note;
-            }
+            moveNode2Head(note);
         }
    }
+
+    private void moveNode2Head(Note note) {
+        Note p = head;
+        head=note;
+        head.next=p;
+        head.pre=null;
+        if (p!=null){
+            p.pre=note;
+        }
+    }
 
     class Note {
         int key;
