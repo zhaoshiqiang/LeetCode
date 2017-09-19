@@ -61,6 +61,11 @@ public class LRU_Cache {
             operateAdd(note);
         }
     }
+
+    /**
+     * 向链表中前插节点
+     * @param note
+     */
     private void operateAdd(Note note){
         Note p = head;
         //将新节点前插入链表
@@ -75,37 +80,37 @@ public class LRU_Cache {
             tail=note;
         }
         if (size > capacity){
-            operateUpdate(tail);
+            map.remove(tail.key);
+            tail=tail.pre;
+            size--;
         }
     }
+
+    /**
+     * 调整对应节点到链表首位
+     * @param note
+     */
     private void operateUpdate(Note note){
-        if (size > capacity){
-            //删除节点
-            tail=tail.pre;
-            map.remove(note.key);
-            size--;
+        //只把对应节点调整到链表首位
+        if (head == note){
+            return;
         }else {
-            //只把对应节点调整到链表首位
-            if (head == note){
-                return;
-            }else {
-                //把note原来位置的前后节点链接起来
-                note.pre.next=note.next;
-                if (note.next != null){
-                    note.next.pre=note.pre;
-                }
-                //如果note在尾部
-                if (tail == note){
-                    tail=note.pre;
-                }
-                //把note移动到链表首位
-                Note p = head;
-                head=note;
-                head.next=p;
-                head.pre=null;
-                if (p!=null){
-                    p.pre=note;
-                }
+            //把note原来位置的前后节点链接起来
+            note.pre.next=note.next;
+            if (note.next != null){
+                note.next.pre=note.pre;
+            }
+            //如果note在尾部
+            if (tail == note){
+                tail=note.pre;
+            }
+            //把note移动到链表首位
+            Note p = head;
+            head=note;
+            head.next=p;
+            head.pre=null;
+            if (p!=null){
+                p.pre=note;
             }
         }
    }
