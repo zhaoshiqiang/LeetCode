@@ -20,6 +20,7 @@ import java.util.Set;
 public class Word_Break {
     public static boolean wordBreak(String s, Set<String> wordDict) {
         int length = s.length();
+        //dp[i]表示s.sub(0,i)是否能划分为wordDick中的单词
         boolean[] dp = new boolean[s.length()+1];
         dp[0]=true; //初始化，s=""时为true
         for (int i=0; i<=length ;i++){
