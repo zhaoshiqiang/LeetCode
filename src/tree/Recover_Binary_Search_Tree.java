@@ -5,7 +5,8 @@ package tree;
      Recover the tree without changing its structure.
 
      Note:
-     A solution using O(n) space is pretty straight forward. Could you devise a constant space solution?
+     A solution using O(n) space is pretty straight forward.
+    Could you devise a constant space solution?
  * Created by zhaoshiqiang on 2017/2/2.
  */
 //二叉树中序遍历
