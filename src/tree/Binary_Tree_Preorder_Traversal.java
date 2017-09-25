@@ -15,7 +15,7 @@ import java.util.Stack;
      3
      return [1,2,3].
 
- Note: Recursive solution is trivial, could you do it iteratively?
+ Note: Recursive Main_zhongxing is trivial, could you do it iteratively?
  * Created by zhaoshiqiang on 2017/2/9.
  */
 //二叉树前序和中序非递归遍历
@@ -31,6 +31,7 @@ public class Binary_Tree_Preorder_Traversal {
         }
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
+        //和递归的流程类似
         while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             if (node!=null){
@@ -43,6 +44,10 @@ public class Binary_Tree_Preorder_Traversal {
         }
         return ret;
     }
+
+    /*
+    * System.out.print(p.val+"  ");语句的位置不一样，决定是前序遍历还是后序遍历
+    * */
     //前序遍历非递归版
     public static List<Integer> preorderTraversalII(TreeNode root) {
         List<Integer> ret = new ArrayList<>();
