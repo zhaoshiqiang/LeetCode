@@ -3,7 +3,8 @@ package tree;
 import java.util.*;
 
 /**第103题
- * Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+ * Given a binary tree, return the zigzag level order traversal of its nodes' values.
+ * (ie, from left to right, then right to left for the next level and alternate between).
 
      For example:
      Given binary tree [3,9,20,null,null,15,7],
@@ -84,7 +85,9 @@ public class Binary_Tree_Zigzag_Level_Order_Traversal {
         stack.push(root);
         while (!stack.isEmpty()){
             TreeNode node = stack.pop();
+            //访问节点
             layer.add(node.val);
+            //扩展节点
             if (!flag){
                 //如果不需要反转，则由左到右添加
                 if (node.left != null)
