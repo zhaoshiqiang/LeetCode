@@ -21,8 +21,10 @@ public class Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
         if (prestart>preend || instart>inend){
             return null;
         }
-
         int rootvalue = preorder[prestart];
+        //生成节点
+        TreeNode root = new TreeNode(rootvalue);
+        //寻找左子树节点
         int i=instart;
         for (;i<inorder.length; i++){
             if (inorder[i] == rootvalue){
@@ -31,8 +33,9 @@ public class Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
         }
         //求得左树节点的个数
         int len = i-instart;
-        TreeNode root = new TreeNode(rootvalue);
+        //递归生成左子树
         root.left=buildTree(preorder,prestart+1,prestart+len,inorder,instart,i-1);
+        //递归生成右子树
         root.right=buildTree(preorder,prestart+len+1,preend,inorder,i+1,inend);
         return root;
     }
