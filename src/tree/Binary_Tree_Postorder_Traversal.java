@@ -14,7 +14,7 @@ import java.util.Stack;
       /
      3
      return [3,2,1].
- Note: Recursive solution is trivial, could you do it iteratively?
+ Note: Recursive Main_zhongxing is trivial, could you do it iteratively?
  * Created by zhaoshiqiang on 2017/2/11.
  */
 //非递归后序遍历
