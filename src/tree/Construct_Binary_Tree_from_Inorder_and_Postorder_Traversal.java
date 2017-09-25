@@ -27,13 +27,17 @@ public class Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal {
             return null;
         }
         int rootvalue = postorder[postend];
+        //生成节点
         TreeNode root = new TreeNode(rootvalue);
+        //判断哪些节点是左子树部门
         int i=instart;
         while ( inorder[i]!=rootvalue ){
             i++;
         }
         int length = i-instart;
+        //递归生成左子树
         root.left=buildTree(inorder,instart,i-1,postorder,poststart,poststart+length-1);
+        //递归生成右子树
         root.right=buildTree(inorder,i+1,inend,postorder,poststart+length,postend-1);
         return root;
     }
