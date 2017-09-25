@@ -3,7 +3,7 @@ package tree;
 /**第117题
  * Follow up for problem "Populating Next Right Pointers in Each Node".
 
-     What if the given tree could be any binary tree? Would your previous solution still work?
+     What if the given tree could be any binary tree? Would your previous Main_zhongxing still work?
      Note:
      You may only use constant extra space.
      For example,
@@ -19,6 +19,7 @@ package tree;
      2 -> 3 -> NULL
     / \    \
    4-> 5 -> 7 -> NULL
+    这是{@link Populating_Next_Right_Pointers_in_Each_Node}的升级版本
  * Created by zhaoshiqiang on 2017/2/25.
  */
 //用固定的空间搜索变形二叉树
@@ -28,10 +29,11 @@ public class Populating_Next_Right_Pointers_in_Each_NodeII {
         TreeLinkNode head = root;
         while (head != null){
             TreeLinkNode cur = head;
-            //将curNode下一层的节点全部连起来，dummy作为这个链表的头指针
+            //将curNode下一层的节点全部连成一个链表，dummy作为这个链表的头指针
             TreeLinkNode dummy = new TreeLinkNode(0);
             TreeLinkNode pre = dummy;
             while (cur != null){
+                //有左节点或者右节点的时候就连接，这样在不是满树的情况下依然适用
                 if (cur.left != null){
                     pre.next=cur.left;
                     pre=pre.next;
