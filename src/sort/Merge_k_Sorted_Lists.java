@@ -11,7 +11,7 @@ import java.util.PriorityQueue;
  */
 //外排序
 public class Merge_k_Sorted_Lists {
-    //第一种思路类似于归并排序中归并的过程，先把k个list分成两半，然后继续划分，知道剩下两个list就合并起来，
+    //第一种思路类似于归并排序中归并的过程，先把k个list分成两半，然后继续划分，直到剩下两个list就合并起来，
     // 合并时会用到Merge Two Sorted Lists这道题，代码如下
     //假设总共有k个list，每个list的最大长度是n，那么运行时间满足递推式T(k) = 2T(k/2)+O(n*k)。
     // 根据主定理，可以算出算法的总复杂度是O(nklogk)。空间复杂度的话是递归栈的大小O(logk)。

@@ -55,6 +55,27 @@ public class Binary_Tree_Postorder_Traversal {
         return ret;
     }
 
+    /**
+     * 取巧的方法。该写法的访问顺序并不是后序遍历，而是利用先序遍历“根左右”的遍历顺序，
+     * 将先序遍历顺序更改为“根右左”，反转结果List，得到结果顺序为“左右根”。
+     * @param root
+     * @return
+     */
+    public List<Integer> postorderTraversalII(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        if(root == null)
+            return res;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            TreeNode node = stack.pop();
+            if(node.left != null) stack.push(node.left);//和传统先序遍历不一样，先将左结点入栈
+            if(node.right != null) stack.push(node.right);//后将右结点入栈
+            res.add(0,node.val);                        //逆序添加结点值
+        }
+        return res;
+    }
+
     static class TreeNode {
         int val;
         TreeNode left;

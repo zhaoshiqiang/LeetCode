@@ -31,6 +31,6 @@ public class Reverse_words_in_a_string {
 
 
     public static void main(String[] args){
-        System.out.println(reverseWords(" 1"));
+        System.out.println(reverseWords(" the sky is blue"));
     }
 }

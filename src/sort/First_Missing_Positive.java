@@ -15,6 +15,7 @@ public class First_Missing_Positive {
     public static int firstMissingPositive(int[] nums) {
         /*
         * 由于只关心正数，而且要求的数必然小于数组长度，可以利用桶排序的思想
+        * 把存在的正整数i 放到数组a[]中的i-1位置上，这样，在最后遍历数组时，只要a[i] != i+1，那么这个i+1，就是所求
         * */
         for (int i=0;i<nums.length;i++){
             while (nums[i] != i+1){
@@ -36,7 +37,7 @@ public class First_Missing_Positive {
     }
 
     public static void main(String[] args){
-        int[] nums =new  int[]{1,1};
+        int[] nums =new  int[]{3,4,-1,1};
         System.out.println(firstMissingPositive(nums));
     }
 }

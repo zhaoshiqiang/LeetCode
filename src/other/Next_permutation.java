@@ -1,6 +1,5 @@
 package other;
 
-import com.sun.org.apache.bcel.internal.generic.IINC;
 
 /** 第31题
  * Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.

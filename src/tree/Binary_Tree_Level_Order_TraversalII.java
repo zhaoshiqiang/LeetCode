@@ -54,6 +54,40 @@ public class Binary_Tree_Level_Order_TraversalII {
         return result;
     }
 
+
+    public List<List<Integer>> levelOrderBottomII(TreeNode root) {
+        // 注意，这里是LinkedList
+        LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();
+        if(root==null) {
+            return res;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        //将根节点放入队列中，然后不断遍历队列
+        queue.add(root);
+        while(queue.size()>0) {
+            //获取当前队列的长度，这个长度相当于 当前这一层的节点个数
+            int size = queue.size();
+            List<Integer> tmp = new ArrayList<Integer>();
+            //将队列中的元素都拿出来(也就是获取这一层的节点)，放到临时list中
+            //如果节点的左/右子树不为空，放入队列中
+            for(int i=0;i<size;++i) {
+                TreeNode t = queue.remove();
+                tmp.add(t.val);
+                if(t.left!=null) {
+                    queue.add(t.left);
+                }
+                if(t.right!=null) {
+                    queue.add(t.right);
+                }
+            }
+            // 每次都往队头塞
+            res.addFirst(tmp);
+        }
+        return res;
+    }
+
+
     static class TreeNode {
         int val;
         TreeNode left;
