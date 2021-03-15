@@ -71,6 +71,20 @@ public class Remove_Duplicates_from_Sorted_ListII {
 
         return dummy.next;
     }
+
+    public ListNode deleteDuplicatesIII(ListNode head){
+        if (head == null || head.next==null) return head;
+
+        if (head.val == head.next.val){
+            while (head != null && head.next != null && head.val == head.next.val){
+                head=head.next;
+            }
+            return deleteDuplicatesIII(head.next);
+        }else {
+            head.next = deleteDuplicatesIII(head.next);
+            return head;
+        }
+    }
     public static class ListNode {
         int val;
         ListNode next;

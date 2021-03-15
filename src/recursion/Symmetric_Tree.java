@@ -32,17 +32,11 @@ public class Symmetric_Tree {
 
     private boolean isSame(TreeNode left, TreeNode right){
         //是叶子节点
-        if (left == null && right == null){
-            return true;
-        }
+        if (left == null && right == null) return true;
         //只有左孩子或者只有右孩子
-        if (left != null && right == null || left == null && right != null){
-            return false;
-        }
+        if (left == null || right == null) return false;
         //左右孩子数值不相等
-        if (left.val != right.val){
-            return false;
-        }
+        if (left.val != right.val) return false;
         return isSame(left.left,right.right) && isSame(right.left,left.right);
     }
 
