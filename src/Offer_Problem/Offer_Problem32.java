@@ -1,3 +1,4 @@
+package Offer_Problem;
 
 /**
  * 《剑指offer》从1到n整数中1出现的数字

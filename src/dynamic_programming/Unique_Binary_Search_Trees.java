@@ -33,6 +33,6 @@ public class Unique_Binary_Search_Trees {
     }
 
     public static void main(String[] args){
-        System.out.println(numTrees(9));
+        System.out.println(numTrees(3));
     }
 }

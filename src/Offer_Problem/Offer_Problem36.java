@@ -1,3 +1,4 @@
+package Offer_Problem;
 
 /**
  * 《剑指offer》数组中的逆序对
